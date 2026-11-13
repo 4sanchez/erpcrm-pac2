@@ -469,18 +469,6 @@ thead .col-highlight { background: var(--c-primary); color: #fff; }
   margin-top: 0.4rem;
 }
 
-/* Infografia de la PAC1 */
-.infographic {
-  margin: 0;
-  max-width: 640px;
-  margin-inline: auto;
-}
-.infographic img {
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.infographic figcaption { text-align: center; margin-top: 0.8rem; }
-
 /* 9. Preus ----------------------------------------------------------------- */
 .plans {
   display: grid;
