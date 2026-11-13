@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suport i contacte · SAP Business One</title>
+  <meta name="description" content="Formulari de contacte, informació de suport i ubicació de la seu central de SAP.">
+  <link rel="icon" href="../img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contingut">Salta al contingut</a>
+
+  <!-- ===== Capçalera i menú de navegació ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img src="../img/logo.png" alt="" width="34" height="34">
+        SAP Business One
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Obre o tanca el menú">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Navegació principal">
+        <ul>
+          <li><a href="../index.html">Inici</a></li>
+          <li><a href="features.html">Funcionalitats</a></li>
+          <li><a href="pricing.html">Preus</a></li>
+          <li><a href="support.html" aria-current="page">Suport</a></li>
+        </ul>
+        <a class="btn btn--primary" href="support.html#contacte">Demana una demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contingut">
+    <section class="section" id="contacte" aria-label="Contacte">
+      <div class="container support-grid">
+
+        <!-- ===== Formulari de contacte ===== -->
+        <div>
+          <h1>Contacta amb nosaltres</h1>
+          <p class="note">Vols una demostració, un pressupost o tens dubtes? Escriu-nos i et respondrem en un màxim de 48 hores laborables.</p>
+
+          <form id="form-contacte" class="card" action="#" method="post" novalidate>
+            <div class="form-field">
+              <label for="nom">Nom i cognoms</label>
+              <input type="text" id="nom" name="nom" autocomplete="name" placeholder="Escriu el teu nom" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Correu electrònic</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="nom@empresa.com" required>
+            </div>
+            <div class="form-field">
+              <label for="empresa">Empresa (opcional)</label>
+              <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Nom de l'empresa">
+            </div>
+            <div class="form-field">
+              <label for="assumpte">Assumpte</label>
+              <select id="assumpte" name="assumpte" required>
+                <option value="">Tria una opció</option>
+                <option value="demo">Vull una demostració</option>
+                <option value="pressupost">Vull un pressupost</option>
+                <option value="suport">Necessito suport tècnic</option>
+                <option value="altres">Altres consultes</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="missatge">Missatge</label>
+              <textarea id="missatge" name="missatge" placeholder="Explica'ns què necessites" required></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="privacitat" name="privacitat" required>
+              <label for="privacitat">Accepto que les meves dades s'utilitzin només per respondre aquesta consulta.</label>
+            </div>
+            <button type="submit" class="btn btn--primary">Envia el missatge</button>
+            <p class="form-status" id="form-status" role="status" tabindex="-1" hidden></p>
+          </form>
+        </div>
+
+        <!-- ===== Informació de contacte i mapa ===== -->
+        <aside aria-labelledby="titol-info">
+          <div class="card">
+            <h2 id="titol-info">Informació de contacte</h2>
+            <ul class="contact-list">
+              <li>
+                <span class="icon-tile" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                </span>
+                <div>
+                  <strong>Seu central de SAP</strong>
+                  <span>SAP SE · Dietmar-Hopp-Allee 16, 69190 Walldorf (Alemanya)</span>
+                </div>
+              </li>
+              <li>
+                <span class="icon-tile" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                </span>
+                <div>
+                  <strong>Web del producte</strong>
+                  <a href="https://www.sap.com/spain/products/erp/business-one.html" target="_blank" rel="noopener">sap.com · SAP Business One</a>
+                </div>
+              </li>
+              <li>
+                <span class="icon-tile" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"/></svg>
+                </span>
+                <div>
+                  <strong>Suport tècnic per a clients</strong>
+                  <a href="https://me.sap.com/" target="_blank" rel="noopener">Portal SAP for Me</a>
+                </div>
+              </li>
+              <li>
+                <span class="icon-tile" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5 12 4l10 4.5-10 4.5L2 8.5Z"/><path d="M6 10.5V16c2 1.6 4 2.3 6 2.3s4-.7 6-2.3v-5.5"/></svg>
+                </span>
+                <div>
+                  <strong>Formació gratuïta</strong>
+                  <a href="https://learning.sap.com/" target="_blank" rel="noopener">SAP Learning</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <figure class="map">
+            <iframe title="Mapa de la seu central de SAP SE a Walldorf, Alemanya"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=8.6300%2C49.2870%2C8.6560%2C49.2995&amp;layer=mapnik&amp;marker=49.2933%2C8.6425"
+                    loading="lazy"></iframe>
+            <figcaption class="note">
+              Seu central de SAP a Walldorf ·
+              <a href="https://www.openstreetmap.org/?mlat=49.2933&amp;mlon=8.6425#map=16/49.2933/8.6425" target="_blank" rel="noopener">Obre el mapa gran</a>
+            </figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Com funciona el suport ===== -->
+    <section class="section section--white" aria-labelledby="titol-suport">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Com funciona el suport</span>
+          <h2 id="titol-suport">Sempre tens algú a qui trucar</h2>
+          <p>El suport de SAP Business One està organitzat per nivells: el partner que ha implantat el sistema és el primer punt de contacte i escala a SAP els casos que ho requereixen.</p>
+        </div>
+        <ol class="steps">
+          <li><strong>Partner de SAP.</strong> Resol dubtes d'ús, configuració i incidències del dia a dia.</li>
+          <li><strong>Suport de SAP.</strong> El partner obre un cas a SAP quan cal una correcció del producte.</li>
+          <li><strong>Comunitat i formació.</strong> Guies, cursos i fòrums oberts per aprendre pel teu compte.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Peu de pàgina ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <ul class="footer-links">
+        <li><a href="support.html#contacte">Contacte</a></li>
+        <li><a href="pricing.html#faq">Preguntes freqüents</a></li>
+        <li><a href="features.html#comparativa">Comparativa</a></li>
+      </ul>
+      <p class="footer-legal">© 2026 Adrià Sánchez · Web acadèmica (PAC2, DAM1). SAP i SAP Business One són marques registrades de SAP SE.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

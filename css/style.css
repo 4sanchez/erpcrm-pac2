@@ -1,0 +1,724 @@
+/* ==========================================================================
+   SAP Business One · Web de presentació (PAC2 · 0491 Sistemes de Gestió Empresarial)
+   Full d'estils únic i centralitzat per a totes les pàgines.
+
+   Índex
+   1. Variables (tokens de disseny)
+   2. Base i reset
+   3. Utilitats i contenidors
+   4. Botons
+   5. Capçalera i navegació (amb menú mòbil sense JavaScript)
+   6. Hero (portada)
+   7. Seccions i targetes
+   8. Pàgina de funcionalitats (mòduls, taula, avantatges, gràfic)
+   9. Pàgina de preus
+   10. Pàgina de suport (formulari, contacte, mapa)
+   11. Peu de pàgina
+   12. Responsive (mobile-first: de menys a més amplada)
+   ========================================================================== */
+
+/* 1. Variables ------------------------------------------------------------ */
+:root {
+  --c-primary: #0b63ce;        /* blau principal (botons, enllaços) */
+  --c-primary-dark: #084c9e;   /* hover dels botons */
+  --c-primary-soft: #e7f0fb;   /* fons suaus i icones */
+  --c-ink: #14213d;            /* títols */
+  --c-text: #36415a;           /* text de cos */
+  --c-muted: #5b6579;          /* text secundari (contrast AA sobre blanc) */
+  --c-bg: #f5f7fa;             /* fons general */
+  --c-surface: #ffffff;        /* targetes */
+  --c-border: #e1e6ee;         /* vores */
+  --c-ok: #237a3b;             /* avantatges */
+  --c-ko: #b42318;             /* inconvenients */
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(20, 33, 61, 0.06), 0 4px 16px rgba(20, 33, 61, 0.06);
+  --container: 1120px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* 2. Base i reset ----------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--c-text);
+  background: var(--c-bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--c-ink);
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: 2.1rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.6rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.05rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--c-primary); }
+a:hover { color: var(--c-primary-dark); }
+
+/* Focus visible per a la navegació amb teclat */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+.nav-toggle-label:focus-visible {
+  outline: 3px solid #f2a900;
+  outline-offset: 2px;
+}
+
+/* Enllaç per saltar directament al contingut (accessibilitat) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--c-ink);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus { left: 1rem; color: #fff; }
+
+/* 3. Utilitats i contenidors ------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section { padding: 3.5rem 0; }
+.section--white { background: var(--c-surface); }
+
+.section-head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.2rem;
+}
+.section-head p { color: var(--c-muted); }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: 0.5rem;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--c-muted);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 4. Botons ------------------------------------------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.btn--primary { background: var(--c-primary); color: #fff; }
+.btn--primary:hover { background: var(--c-primary-dark); color: #fff; }
+.btn--soft { background: var(--c-primary-soft); color: var(--c-primary-dark); }
+.btn--soft:hover { background: #d3e4f8; color: var(--c-primary-dark); }
+.btn--ghost { border-color: var(--c-primary); color: var(--c-primary); background: transparent; }
+.btn--ghost:hover { background: var(--c-primary-soft); }
+.btn--block { display: block; width: 100%; }
+
+/* 5. Capçalera i navegació -------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--c-surface);   /* fons sòlid: evita "fantasmes" en fer scroll */
+  border-bottom: 1px solid var(--c-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 64px;
+  gap: 0 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--c-ink);
+  text-decoration: none;
+}
+.brand img { width: 34px; height: 34px; border-radius: 8px; }
+.brand:hover { color: var(--c-ink); }
+
+/* El checkbox controla el menú en mòbil; no es mostra mai */
+.nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+.nav-toggle-label {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+.nav-toggle-label span {
+  display: block;
+  height: 2px;
+  background: var(--c-ink);
+  border-radius: 2px;
+}
+.nav-toggle:focus-visible + .nav-toggle-label { outline: 3px solid #f2a900; }
+
+.main-nav {
+  display: none;               /* amagat en mòbil fins que s'obre */
+  width: 100%;
+  padding: 0.5rem 0 1rem;
+}
+.nav-toggle:checked ~ .main-nav { display: block; }
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav a {
+  display: block;
+  padding: 0.65rem 0.25rem;
+  color: var(--c-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.main-nav a:hover { color: var(--c-primary); }
+.main-nav a[aria-current="page"] { color: var(--c-ink); font-weight: 700; }
+.main-nav .btn { margin-top: 0.5rem; color: #fff; padding: 0.55rem 1rem; }
+
+/* 6. Hero ------------------------------------------------------------------- */
+.hero {
+  background: #dfeaf7;
+  padding: 3rem 0;
+}
+.hero-inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+.hero h1 { font-size: 2.3rem; }
+.hero h1 span { color: var(--c-primary); }
+.hero p { font-size: 1.08rem; max-width: 34rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.hero-figure img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Capçalera simple de les pàgines interiors */
+.page-head {
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+.page-head h1 { font-size: 2.2rem; }
+.page-head p { color: var(--c-muted); max-width: 640px; margin: 0 auto; }
+
+/* 7. Seccions i targetes ---------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+}
+.card p { color: var(--c-muted); font-size: 0.93rem; margin: 0; }
+
+.icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--c-primary-soft);
+  color: var(--c-primary);
+  margin-bottom: 0.9rem;
+}
+.icon-tile svg { width: 22px; height: 22px; }
+
+/* Xifres clau de la portada */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+.stat {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.2rem 0.75rem;
+}
+.stat strong {
+  display: block;
+  font-size: 1.7rem;
+  color: var(--c-primary);
+  line-height: 1.1;
+}
+.stat span { font-size: 0.88rem; color: var(--c-muted); }
+
+/* Llista amb marques de verificació */
+.check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.check-list li {
+  position: relative;
+  padding-left: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 1rem;
+  height: 0.55rem;
+  border-left: 2px solid var(--c-primary);
+  border-bottom: 2px solid var(--c-primary);
+  transform: rotate(-45deg);
+}
+
+/* Bloc de dues columnes text + llista */
+.split {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Franja de crida a l'acció */
+.cta-band {
+  background: var(--c-ink);
+  color: #dbe3f0;
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.cta-band h2 { color: #fff; }
+.cta-band p { max-width: 560px; margin: 0 auto 1.4rem; }
+
+/* 8. Funcionalitats ----------------------------------------------------------- */
+.module-group { margin-bottom: 3.5rem; }
+.module-group:last-child { margin-bottom: 0; }
+
+.feature-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.feature-card img {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+}
+.feature-card .feature-body { padding: 1.1rem 1.2rem 1.3rem; }
+.feature-card h3 { margin-bottom: 0.35rem; }
+.feature-card p { color: var(--c-muted); font-size: 0.92rem; margin: 0; }
+
+/* Taules (comparativa i models de contractació) */
+.table-wrap {
+  overflow-x: auto;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+caption {
+  text-align: left;
+  padding: 1rem 1.2rem 0;
+  font-size: 0.85rem;
+  color: var(--c-muted);
+  caption-side: bottom;
+  padding-bottom: 1rem;
+}
+th,
+td {
+  padding: 0.8rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--c-border);
+  vertical-align: top;
+}
+thead th {
+  background: #f0f4fa;
+  color: var(--c-ink);
+  font-weight: 600;
+}
+tbody th { color: var(--c-ink); font-weight: 600; }
+.col-highlight { background: #f4f8fe; }
+thead .col-highlight { background: var(--c-primary); color: #fff; }
+
+/* Avantatges i inconvenients */
+.pros-cons { display: grid; gap: 1.25rem; }
+.pros-cons h3 { display: flex; align-items: center; gap: 0.5rem; }
+.pros-cons ul { margin: 0; padding-left: 1.2rem; }
+.pros-cons li { margin-bottom: 0.5rem; }
+.pros h3 { color: var(--c-ok); }
+.cons h3 { color: var(--c-ko); }
+.pros { border-top: 4px solid var(--c-ok); }
+.cons { border-top: 4px solid var(--c-ko); }
+
+/* Gràfic de barres fet amb CSS (rang de preus) */
+.bar-chart { margin: 0; }
+.bar-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+  margin-bottom: 1.1rem;
+}
+.bar-label { font-weight: 600; color: var(--c-ink); font-size: 0.92rem; }
+.bar-label small { font-weight: 400; color: var(--c-muted); }
+.bar-track {
+  position: relative;
+  height: 14px;
+  background: #edf1f6;
+  border-radius: 7px;
+}
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 7px;
+  background: #8fb7e8;
+}
+.bar-fill--main { background: var(--c-primary); }
+/* Posició de cada barra sobre una escala de 0 a 250 (inici = preu mínim, amplada = rang) */
+.bar-fill--sap { left: 38%; width: 38%; }   /* 95–190 USD */
+.bar-fill--bc  { left: 32%; width: 12%; }   /* 80–110 USD */
+.bar-fill--pd  { left: 5.6%; width: 26%; }  /* 14–79 EUR */
+.chart-note { margin: 1rem 0 0; }
+.bar-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--c-muted);
+  margin-top: 0.4rem;
+}
+
+/* Infografia de la PAC1 */
+.infographic {
+  margin: 0;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.infographic img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.infographic figcaption { text-align: center; margin-top: 0.8rem; }
+
+/* 9. Preus ----------------------------------------------------------------- */
+.plans {
+  display: grid;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+.plan--featured {
+  border: 2px solid var(--c-primary);
+}
+.plan-badge {
+  position: absolute;
+  top: -0.8rem;
+  left: 1.4rem;
+  background: var(--c-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+.plan-model {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-muted);
+  margin: 0 0 0.3rem;
+}
+.plan h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+.plan--featured h2 { color: var(--c-primary); }
+.price {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);   /* s'adapta perquè el rang no es parteixi */
+  white-space: nowrap;
+  font-weight: 800;
+  color: var(--c-ink);
+  line-height: 1.1;
+  margin: 0;
+}
+.price-unit { color: var(--c-muted); font-size: 0.88rem; margin: 0.3rem 0 1.2rem; }
+.plan .check-list { flex-grow: 1; margin-bottom: 1.4rem; font-size: 0.93rem; }
+
+/* Preguntes freqüents */
+.faq { max-width: 760px; margin: 0 auto; }
+.faq details {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: 0 1.2rem;
+  margin-bottom: 0.75rem;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--c-ink);
+  padding: 1rem 0;
+}
+.faq details p { color: var(--c-muted); }
+
+/* 10. Suport ---------------------------------------------------------------- */
+.support-grid { display: grid; gap: 2rem; }
+
+.form-field { margin-bottom: 1.1rem; }
+.form-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--c-ink);
+  margin-bottom: 0.35rem;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--c-ink);
+  background: var(--c-surface);
+  border: 1px solid #c6cfdc;
+  border-radius: var(--radius-sm);
+}
+.form-field textarea { min-height: 140px; resize: vertical; }
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: #6d7789; }
+
+.form-check {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  margin-bottom: 1.3rem;
+}
+.form-check input { margin-top: 0.3rem; width: 18px; height: 18px; flex-shrink: 0; }
+
+.form-status {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  background: #e6f4ea;
+  color: #1d5e2e;
+  font-weight: 500;
+}
+.form-status[hidden] { display: none; }
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-list li {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--c-border);
+}
+.contact-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.contact-list .icon-tile { margin: 0; flex-shrink: 0; width: 38px; height: 38px; }
+.contact-list strong { display: block; color: var(--c-ink); font-size: 0.9rem; }
+.contact-list span,
+.contact-list a { font-size: 0.93rem; }
+.contact-list span { color: var(--c-muted); }
+
+.map {
+  margin-top: 1.25rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow);
+}
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border: 0;
+}
+.map figcaption { background: var(--c-surface); padding: 0.6rem 1rem; }
+
+.steps { counter-reset: pas; list-style: none; padding: 0; margin: 0; }
+.steps li {
+  counter-increment: pas;
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 1.1rem;
+}
+.steps li::before {
+  content: counter(pas);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--c-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps strong { color: var(--c-ink); }
+
+/* 11. Peu de pàgina --------------------------------------------------------- */
+.site-footer {
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  padding: 1.6rem 0;
+  font-size: 0.86rem;
+  color: var(--c-muted);
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+.footer-links a { color: var(--c-muted); text-decoration: none; }
+.footer-links a:hover { color: var(--c-primary); text-decoration: underline; }
+.footer-legal { margin: 0; }
+
+/* 12. Responsive ------------------------------------------------------------ */
+
+/* Mòbils grans / tauletes petites */
+@media (min-width: 560px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .pros-cons { grid-template-columns: repeat(2, 1fr); }
+  .bar-row { grid-template-columns: 230px 1fr; align-items: center; }
+  .bar-scale { margin-left: 230px; }
+}
+
+/* Tauletes */
+@media (min-width: 880px) {
+  h1 { font-size: 2.6rem; }
+  .hero { padding: 4.5rem 0; }
+  .hero h1 { font-size: 3rem; }
+  .hero-inner { grid-template-columns: 1.05fr 1fr; gap: 3rem; }
+  .page-head { padding: 4rem 0 1.5rem; }
+  .page-head h1 { font-size: 2.6rem; }
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .grid--4 { grid-template-columns: repeat(4, 1fr); }
+  .plans { grid-template-columns: repeat(3, 1fr); }
+  .split { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .support-grid { grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+  .cta-band { padding: 3rem; }
+  .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+
+  /* Menú d'escriptori: sempre visible, en línia */
+  .nav-toggle-label { display: none; }
+  .main-nav {
+    display: flex !important;
+    width: auto;
+    padding: 0;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2.5rem;
+  }
+  .main-nav ul { display: flex; gap: 1.8rem; margin: 0 auto; }
+  .main-nav a { padding: 0.4rem 0; }
+  .main-nav .btn { margin-top: 0; }
+}

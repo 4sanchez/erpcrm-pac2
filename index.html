@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAP Business One · L'ERP integrat per a pimes</title>
+  <meta name="description" content="Presentació de SAP Business One 10.0: l'ERP amb CRM integrat per a petites i mitjanes empreses. Finances, vendes, compres, inventari i producció en un sol sistema.">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contingut">Salta al contingut</a>
+
+  <!-- ===== Capçalera i menú de navegació (igual a totes les pàgines) ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.png" alt="" width="34" height="34">
+        SAP Business One
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Obre o tanca el menú">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Navegació principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Inici</a></li>
+          <li><a href="html/features.html">Funcionalitats</a></li>
+          <li><a href="html/pricing.html">Preus</a></li>
+          <li><a href="html/support.html">Suport</a></li>
+        </ul>
+        <a class="btn btn--primary" href="html/support.html#contacte">Demana una demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contingut">
+    <!-- ===== Hero: presentació del sistema ===== -->
+    <section class="hero" aria-labelledby="titol-hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">ERP per a pimes · Versió 10.0</span>
+          <h1 id="titol-hero">Tota l'empresa en <span>un sol sistema</span></h1>
+          <p>SAP Business One uneix finances, vendes, CRM, compres, inventari i producció en una única base de dades. Menys fulls de càlcul, més control i dades en temps real per decidir millor.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="html/support.html#contacte">Demana una demo</a>
+            <a class="btn btn--ghost" href="html/features.html">Descobreix les funcionalitats</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="img/hero-dashboard.png" width="900" height="650"
+               alt="Il·lustració d'un tauler de control de SAP Business One amb indicadors de vendes, un gràfic de barres i un gràfic circular.">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Característiques clau ===== -->
+    <section class="section" aria-labelledby="titol-claus">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="titol-claus">Característiques clau</h2>
+          <p>Una sola solució per gestionar el dia a dia de l'empresa, des del primer contacte amb el client fins al tancament comptable.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card">
+            <span class="icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c1.8.8 3 2.6 3.5 5.2"/></svg>
+            </span>
+            <h3>CRM integrat</h3>
+            <p>Interlocutors comercials, oportunitats de venda, activitats i campanyes connectades amb les comandes i la facturació.</p>
+          </article>
+          <article class="card">
+            <span class="icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg>
+            </span>
+            <h3>ERP complet</h3>
+            <p>Comptabilitat, bancs, compres, vendes, inventari i producció amb MRP, tot sobre la mateixa base de dades.</p>
+          </article>
+          <article class="card">
+            <span class="icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
+            </span>
+            <h3>Analítica en temps real</h3>
+            <p>Amb la base de dades SAP HANA, informes i quadres de comandament es calculen a l'instant sobre les dades vives.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Per a qui és ===== -->
+    <section class="section section--white" aria-labelledby="titol-perqui">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Per a qui</span>
+          <h2 id="titol-perqui">Pensat per a pimes que han crescut més que els seus fulls de càlcul</h2>
+          <p>SAP Business One s'adreça a petites i mitjanes empreses, aproximadament d'1 a 300 usuaris, i a filials de grans grups que necessiten un sistema propi i àgil.</p>
+          <p>Es comercialitza i s'implanta a través de la xarxa de partners de SAP, que adapten el sistema a cada sector.</p>
+        </div>
+        <ul class="check-list">
+          <li><strong>Distribució i comerç majorista:</strong> estoc, magatzems i preus per client.</li>
+          <li><strong>Fabricació lleugera:</strong> llistes de materials, ordres de producció i MRP.</li>
+          <li><strong>Comerç minorista i e-commerce:</strong> integració amb botigues i canals de venda.</li>
+          <li><strong>Empreses de serveis:</strong> projectes, contractes de servei i facturació.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Xifres ===== -->
+    <section class="section" aria-labelledby="titol-xifres">
+      <div class="container">
+        <h2 id="titol-xifres" class="visually-hidden">SAP Business One en xifres</h2>
+        <div class="stats">
+          <div class="stat"><strong>1–300</strong><span>usuaris per empresa</span></div>
+          <div class="stat"><strong>+170</strong><span>països on es pot utilitzar</span></div>
+          <div class="stat"><strong>28</strong><span>idiomes disponibles</span></div>
+          <div class="stat"><strong>2</strong><span>bases de dades: SAP HANA o SQL Server</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Novetats de la darrera versió ===== -->
+    <section class="section section--white" aria-labelledby="titol-novetats">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Darrera versió</span>
+          <h2 id="titol-novetats">SAP Business One 10.0 · Feature Package 2608</h2>
+          <p>SAP manté la versió 10.0 i hi afegeix millores amb paquets de funcionalitats periòdics. El paquet 2608 (2026) reforça l'ús des del navegador i incorpora capacitats d'intel·ligència artificial.</p>
+          <a class="btn btn--soft" href="html/features.html">Veure tots els mòduls</a>
+        </div>
+        <ul class="check-list">
+          <li>Noves eines al <strong>Web Client</strong>: ofertes de compra, cobraments vençuts, preparació de comandes i llistes de preus.</li>
+          <li>Funcions d'<strong>intel·ligència artificial</strong> integrades en el treball diari.</li>
+          <li>Nova àrea de <strong>planificació MRP</strong> amb tasques programades.</li>
+          <li>Conciliació bancària externa manual, semiautomàtica o automàtica.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Crida a l'acció ===== -->
+    <section class="section" aria-labelledby="titol-cta">
+      <div class="container">
+        <div class="cta-band">
+          <h2 id="titol-cta">Vols veure-ho amb les dades de la teva empresa?</h2>
+          <p>Explica'ns com treballeu i et preparem una demostració personalitzada de SAP Business One.</p>
+          <a class="btn btn--primary" href="html/support.html#contacte">Contacta amb nosaltres</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Peu de pàgina ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <ul class="footer-links">
+        <li><a href="html/support.html#contacte">Contacte</a></li>
+        <li><a href="html/pricing.html#faq">Preguntes freqüents</a></li>
+        <li><a href="html/features.html#comparativa">Comparativa</a></li>
+      </ul>
+      <p class="footer-legal">© 2026 Adrià Sánchez · Web acadèmica (PAC2, DAM1). SAP i SAP Business One són marques registrades de SAP SE.</p>
+    </div>
+  </footer>
+</body>
+</html>
