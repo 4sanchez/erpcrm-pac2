@@ -9,8 +9,8 @@ Pràctica de la PAC2 del mòdul **0491 · Sistemes de Gestió Empresarial** (DAM
 Grup de tres membres:
 
 - Adrià Sánchez
-- Elias
-- Mario
+- Elias Rodriguez
+- Mario Lopez
 
 ## Enllaços
 
