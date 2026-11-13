@@ -6,9 +6,11 @@ Pràctica de la PAC2 del mòdul **0491 · Sistemes de Gestió Empresarial** (DAM
 
 ## Autoria
 
-| Nom | Rol |
-| --- | --- |
-| Adrià Sánchez | Planificació, contingut, maquetació HTML/CSS, il·lustracions i publicació |
+Grup de tres membres:
+
+- Adrià Sánchez
+- Elias
+- Mario
 
 ## Enllaços
 
@@ -74,4 +76,4 @@ SAP i SAP Business One són marques registrades de SAP SE. Aquesta web és un tr
 
 ## Valoració de l'experiència
 
-Aquesta pràctica m'ha servit per passar d'una infografia estàtica a una web completa: planificar l'estructura de pàgines, escriure contingut propi a partir de la recerca de la PAC1 i maquetar-lo seguint una maqueta donada. El que més temps ha demanat ha estat el comportament responsive (menú mòbil, taules amb desplaçament horitzontal i graelles que canvien de columnes) i contrastar els preus, perquè SAP no els publica i cada font dona xifres diferents. També he après a publicar un projecte estàtic amb GitHub Pages i a revisar l'accessibilitat abans de lliurar.
+Aquesta pràctica ens ha servit per passar d'una infografia estàtica a una web completa: planificar l'estructura de pàgines, escriure contingut propi a partir de la recerca de la PAC1 i maquetar-lo seguint una maqueta donada. El que més temps ha demanat ha estat el comportament responsive (menú mòbil, taules amb desplaçament horitzontal i graelles que canvien de columnes) i contrastar els preus, perquè SAP no els publica i cada font dona xifres diferents. També hem après a publicar un projecte estàtic amb GitHub Pages i a revisar l'accessibilitat abans de lliurar.
